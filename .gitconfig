@@ -1,0 +1,14 @@
+[push]
+	default = simple
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[core]
+	quotepath = false
+[alias]
+	st = status
+	ci = commit
+	co = checkout
+	br = branch
+	dc = diff --cached
