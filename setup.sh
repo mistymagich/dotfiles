@@ -8,7 +8,7 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 # create link dotfiles
 # -----------------------------------------------------------------
 
-FINDPARAM='-maxdepth 1 -not -path "." -not -path ".." -not -name ".git"'
+FINDPARAM='-maxdepth 1 -not -path . -not -path .. -not -regex .+/.git'
 find -name ".*" -not -path "." -not -name ".git" -ok rm -r ~/{} \;
 yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
 
