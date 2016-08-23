@@ -1,0 +1,85 @@
+# 文字コードをUTF8
+defutf8 on
+
+# no annoying audible bell, please
+vbell on
+
+# 隠れているwindowでbellが鳴ったときにメッセージ。
+bell "bell in window %."
+
+# set every new windows hardstatus line to somenthing descriptive
+# defhstatus "screen: ^E (^Et)"
+defscrollback 10240
+
+# PREFIXキーの変更
+escape ^z^z
+
+# windows最下段
+#hardstatus alwayslastline "%+0<%?%F%{= wb}%:%{= wk}%?$LOGNAME@%H %+15<%L=%{= kw} %-w%60L>%{=b kr}%n %t%{-}%+w%75<%= %?%F%{b}%?%{= wb}[%l]%{= wm}%c %{= wb}%y/%m/%d"
+
+##
+# PuTTYステータスバーに"[screen 番号:バッファ名] ログイン情報"表示
+#
+hardstatus string "[screen %n: %t] %h"
+
+# ステータスラインの表示。
+defhstatus I^En:^EtI
+
+# offにするとスタートアップ画面を表示させなくする。
+startup_message off
+
+# onにしておくとscreenがいきなりお亡くなりになられても、その時のプロセスは生きて残る
+autodetach on
+
+# emulate .logout message
+pow_detach_msg "Screen session of \$LOGNAME \$:cr:\$:nl:ended."
+
+# C-z r ののちにj,kでウィンドウリサイズ
+bind r eval 'echo "Resize window"' 'command -c resize'
+bind -c resize ^]  command
+bind -c resize j eval 'resize +1' 'command -c resize'
+bind -c resize k eval 'resize -1' 'command -c resize'
+
+# C-z x ?でemacs風ウィンドウ分割
+bind -c REGION 2 split
+bind -c REGION 1 only
+bind -c REGION 0 remove
+bind -c REGION o focus
+# bind -c REGION \032 resize
+bind x command -c REGION
+
+# C-z . で.screenrcリロード
+bind . eval 'source $HOME/.screenrc' 'echo "~/.screenrc has been reloaded."'
+
+### 複数行のcut&pasteを行ったとき、行末にcr+lfをつけるか、lfをつけるかの指定
+#crlf off
+
+### アクティブwindowで動きがあったとき、それを伝えるか否か
+monitor on
+### 隠れているwindowで動きがあったとき、それを伝えるか否か
+defmonitor on
+
+#各文字コードを行き来するために
+bind ^U encoding utf8 utf8
+bind ^E encoding eucjp utf8
+bind ^W encoding sjis utf8
+info xterm "ks=\E[?1l\E:ku=\E[A:kd=\E[B:kl=\E[D:kr=\E[C:kh=\E[5~:kH=\E[F"
+
+termcapinfo xterm* ti@:te@
+
+
+##
+# ターミナル下部にタブ式スクリーンバッファ情報表示
+#
+caption always "%{= wb} %-w%{=bu dw}%n %t%{-}%+w"
+
+
+## http://frexx.de/xterm-256-notes/
+# erase background with current bg color
+defbce "on"
+# do not use 'screen-bce'
+#term xterm-256color
+
+# include hostlocal .screenrc
+source '.screenrc.local'
+
