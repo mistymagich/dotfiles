@@ -7,7 +7,7 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 
 # create link dotfiles
 # -----------------------------------------------------------------
-
+echo ">>>>>>> Create dotfiles link ..."
 FINDPARAM='-maxdepth 1 -not -path . -not -path .. -not -regex .+/.git'
 find -name ".*" -not -path "." -not -name ".git" -exec rm -rf ~/{} \;
 yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
@@ -17,6 +17,8 @@ yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
 # ~/.ssh/authorized_keys
 # @see https://github.com/claytron/dotfiles/blob/master/create_links.sh
 # -----------------------------------------------------------------
+echo ">>>>>>> Add SSH pubkey ..."
+FINDPARAM='-maxdepth 1 -not -path . -not -path .. -not -regex .+/.git'
 [ ! -d "$HOME/.ssh" ] && mkdir "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 actual_dotfile="/tmp/authorized_keys"
 to_create="$HOME/.ssh/authorized_keys"
@@ -43,6 +45,7 @@ fi
 
 
 # ~/.gitconfig.local
+echo ">>>>>>> Configuration Git ..."
 GIT_CONFIG_LOCAL=~/.gitconfig.local
 if [ ! -e $GIT_CONFIG_LOCAL ]; then
 	echo -n "git config user.email?> "
@@ -60,6 +63,7 @@ fi
 
 
 # Install oh my zsh
+echo ">>>>>>> Install oh-my-zsh ..."
 if [ ! -d ~/.oh-my-zsh ]; then
   sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 fi
