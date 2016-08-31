@@ -13,6 +13,6 @@
 	br = branch
 	dc = diff --cached
 [credential]
-	helper = cache --timeout=3600
+	helper = store
 [include]
 	path = ~/.gitconfig.local
