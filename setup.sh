@@ -15,6 +15,7 @@ yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
 
 
 # ~/.ssh/authorized_keys
+# @see https://github.com/claytron/dotfiles/blob/master/create_links.sh
 # -----------------------------------------------------------------
 [ ! -d "$HOME/.ssh" ] && mkdir "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 actual_dotfile="/tmp/authorized_keys"
