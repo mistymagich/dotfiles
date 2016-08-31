@@ -17,8 +17,11 @@ yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
 # ~/.ssh/authorized_keys
 # -----------------------------------------------------------------
 [ ! -d "$HOME/.ssh" ] && mkdir "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
-actual_dotfile="$SCRIPT_DIR/authorized_keys"
+actual_dotfile="/tmp/authorized_keys"
 to_create="$HOME/.ssh/authorized_keys"
+
+curl -s https://github.com/mistymagich.keys > $actual_dotfile
+
 # remove the old symlink if it is there
 [ -h "$to_create" ] && rm "$to_create" && echo "removed symlink for $to_create"
 # Create the file if it doesn't exist
