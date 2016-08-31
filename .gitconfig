@@ -14,3 +14,5 @@
 	dc = diff --cached
 [credential]
 	helper = cache
+[include]
+	path = ~/.gitconfig.local
