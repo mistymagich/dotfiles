@@ -5,5 +5,5 @@ set -eu
 cd ~
 git clone https://github.com/mistymagich/dotfiles.git
 cd dotfiles
-yes|./setup.sh
+./setup.sh
 

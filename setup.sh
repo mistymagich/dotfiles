@@ -9,7 +9,7 @@ SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
 # -----------------------------------------------------------------
 
 FINDPARAM='-maxdepth 1 -not -path . -not -path .. -not -regex .+/.git'
-find -name ".*" -not -path "." -not -name ".git" -ok rm -r ~/{} \;
+find -name ".*" -not -path "." -not -name ".git" -exec rm -rf ~/{} \;
 yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
 
 
