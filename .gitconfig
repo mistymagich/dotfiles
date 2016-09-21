@@ -12,6 +12,9 @@
 	co = checkout
 	br = branch
 	dc = diff --cached
+
+        # git log よく使うオプションまとめ - Qiita http://qiita.com/take4s5i/items/15d8648405f4e7ea3039
+        graph = log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
 [credential]
 	helper = store
 [include]
