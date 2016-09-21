@@ -3,5 +3,5 @@
 ## setup
 
 ```bash
-curl https://raw.githubusercontent.com/mistymagich/dotfiles/master/install.sh | sh
+bash <(curl -s https://raw.githubusercontent.com/mistymagich/dotfiles/master/install.sh)
 ```
