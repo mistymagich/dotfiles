@@ -2,12 +2,36 @@
 
 set -eu
 
-
 SCRIPT_DIR=$(cd "$(dirname "$0")" && pwd)
+
+
+
+# Helpers
+# @see [emacs.d/tput-helpers at ac153e108efe3125c014cbb79b0e0caaf908268b · jpablobr/emacs.d](https://github.com/jpablobr/emacs.d/blob/ac153e108efe3125c014cbb79b0e0caaf908268b/vendor/snippets/yasnippets-jpablobr/sh-mode/tput-helpers)
+# @see [私が他人のシェルスクリプトから学んだこと | Yakst](https://yakst.com/ja/posts/31)
+# -----------------------------------------------------------------
+
+info() {
+    echo "$(tput setaf 2)[INFO]$(tput op) $1"
+}
+
+error() {
+    echo "$(tput setaf 1)[ERROR]$(tput op) $1"
+}
+
+warning() {
+    echo "$(tput setaf 3)[WARN]$(tput op) $1"
+}
+
+section() {
+   echo -e "\n$(tput setaf 5)###$(tput op) $1"
+}
+
+
 
 # create link dotfiles
 # -----------------------------------------------------------------
-echo ">>>>>>> Create dotfiles link ..."
+section "Create dotfiles link"
 FINDPARAM='-maxdepth 1 -not -path . -not -path .. -not -regex .+/.git'
 find -name ".*" -not -path "." -not -name ".git" -exec rm -rf ~/{} \;
 yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
@@ -17,7 +41,7 @@ yes|find `pwd` ${FINDPARAM} -name ".*" -ok ln -s {} ${HOME}/ \; 2> /dev/null
 # ~/.ssh/authorized_keys
 # @see https://github.com/claytron/dotfiles/blob/master/create_links.sh
 # -----------------------------------------------------------------
-echo ">>>>>>> Add SSH pubkey ..."
+section "Add SSH pubkey"
 FINDPARAM='-maxdepth 1 -not -path . -not -path .. -not -regex .+/.git'
 [ ! -d "$HOME/.ssh" ] && mkdir "$HOME/.ssh" && chmod 700 "$HOME/.ssh"
 actual_dotfile="/tmp/authorized_keys"
@@ -44,8 +68,10 @@ if [ -e "$HOME/.ssh/authorized_keys" ]; then
 fi
 
 
-# ~/.gitconfig.local
-echo ">>>>>>> Configuration Git ..."
+
+# Configuration Git
+# -----------------------------------------------------------------
+section "Configuration Git"
 GIT_CONFIG_LOCAL=~/.gitconfig.local
 if [ ! -e $GIT_CONFIG_LOCAL ]; then
 	echo -n "git config user.email?> "
@@ -60,5 +86,4 @@ if [ ! -e $GIT_CONFIG_LOCAL ]; then
     email = $GIT_AUTHOR_EMAIL
 EOF
 fi
-
 
