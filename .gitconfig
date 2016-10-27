@@ -18,6 +18,7 @@
 
 	# Gitでマージ済みブランチを一括削除する方法 http://changesworlds.com/2016/01/how-to-bulk-delete-the-merged-branch-in-git/
 	de = "!f () { git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d; };f"
+	remote-prune= !git remote prune origin
 [credential]
 	helper = store
 [include]
