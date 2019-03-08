@@ -13,6 +13,9 @@
 	br = branch
 	dc = diff --cached
 
+	# git log全部入り https://qiita.com/imudak/items/4a8549b46fe2e509a08c
+	lg = log --oneline --decorate --graph --branches --tags --remotes
+
         # git log よく使うオプションまとめ - Qiita http://qiita.com/take4s5i/items/15d8648405f4e7ea3039
         graph = log --graph --date=short --pretty=\"format:%C(yellow)%h %C(cyan)%ad %C(green)%an%Creset%x09%s %C(red)%d%Creset\"
 
