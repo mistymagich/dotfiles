@@ -1,0 +1,34 @@
+# ==== フォーマット ====
+# :<emoji>: <subject>
+# <BLANK LINE>
+# <body>
+
+# ==== emoji ====
+# ✨ :sparkles:                  機能追加・改善
+# 🐛 :bug:                       バグ修正
+# 🚑 :ambulance:                 緊急・重大な修正
+# 📚 :books:                     ドキュメントのみの変更
+# 🎨 :art:                       コードフォーマット
+# 🔨 :hammer:                    リファクタリング、機能追加・改善やバグ修正でないコード変更
+# 🐎 :racehorse:                 パフォーマンス向上のコード変更
+# ➕ :heavy_plus_sign:           依存パッケージの追加
+# ➖ :heavy_minus_sign:          依存パッケージの削除
+# 🚨 :rotating_light:            テストに関する変更
+# 🔧 :wrench:                    ビルドプロセスやドキュメント作成などの補助ツールやライブラリの変更
+# 💩 :poop:                      後で改善が必要なとりあえずのコード
+# 🗑 :wastebasket:               コードやファイルの削除
+# 🚧 :construction:              作業中
+# 🎉 :tada:                      Initial Commit(リポジトリ新規作成、プルリクエスト作成)
+# 🔀 :twisted_rightwards_arrows: プルリクエスト取り込み
+#
+# その他
+# https://github.com/dannyfritz/commit-message-emoji
+# https://gist.github.com/parmentf/035de27d6ed1dce0b36a
+# https://gitmoji.carloscuesta.me/
+
+
+# ==== ルール ====
+# - タイトルは簡潔に
+# - タイトルの時制は現在で体言止めで終わる。最後に句点(。)は不要
+# - 本文の1行が長くなる場合は適宜改行いれる
+# - 本文にはなぜどうしたか、前と比較してどうなったか
