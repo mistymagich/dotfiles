@@ -4,27 +4,42 @@
 # <body>
 
 # ==== emoji ====
+# -- コードに関するもの --
+# ✏ :pencil2:                   ちょっとした変更・typo
 # ✨ :sparkles:                  機能追加・改善
 # 🐛 :bug:                       バグ修正
 # 🚑 :ambulance:                 緊急・重大な修正
+# 💥 :boom:                      重大な変更(アーキテクチャ・ディレクトリ構成など)
+# 🐎 :racehorse:                 パフォーマンス向上のコード変更
+# -- ドキュメント・リファクタリング --
 # 📚 :books:                     ドキュメントのみの変更
 # 🎨 :art:                       コードフォーマット
 # 🔨 :hammer:                    リファクタリング、機能追加・改善やバグ修正でないコード変更
-# 🐎 :racehorse:                 パフォーマンス向上のコード変更
+# 💡 :bulb:                       ソースコード上のドキュメント作業
+# -- 設定 --
+# 📄 :page_facing_up:             設定の変更
+# -- 依存パッケージ --
 # ➕ :heavy_plus_sign:           依存パッケージの追加
 # ➖ :heavy_minus_sign:          依存パッケージの削除
-# 🚨 :rotating_light:            テストに関する変更
+# -- ツール関係 --
+# 🚨 :rotating_light:            テストに関するもの
+# 🐳 :whale:                     Dockerに関するもの
 # 🔧 :wrench:                    ビルドプロセスやドキュメント作成などの補助ツールやライブラリの変更
-# 💩 :poop:                      後で改善が必要なとりあえずのコード
-# 🗑 :wastebasket:               コードやファイルの削除
+# -- 一時的な作業 --
 # 🚧 :construction:              作業中
+# 💩 :poop:                      後で改善が必要なとりあえずのコード
+# -- リポジトリ操作 --
+# 🗑 :wastebasket:               コードやファイルの削除
 # 🎉 :tada:                      Initial Commit(リポジトリ新規作成、プルリクエスト作成)
 # 🔀 :twisted_rightwards_arrows: プルリクエスト取り込み
+# 🔖 :bookmark:                  タグ打ち時
 #
 # その他
 # https://github.com/dannyfritz/commit-message-emoji
 # https://gist.github.com/parmentf/035de27d6ed1dce0b36a
 # https://gitmoji.carloscuesta.me/
+# gitにおけるコミットログ/メッセージ例文集
+# https://anond.hatelabo.jp/20160725092419 (https://gist.github.com/mono0926/e6ffd032c384ee4c1cef5a2aa4f778d7)
 
 
 # ==== ルール ====
