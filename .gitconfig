@@ -26,3 +26,5 @@
 	helper = cache --timeout=3600
 [include]
 	path = ~/.gitconfig.local
+[commit]
+	template = ~/dotfiles/gitmessage.txt
