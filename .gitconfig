@@ -23,6 +23,6 @@
 	de = "!f () { git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d; };f"
 	remote-prune= !git remote prune origin
 [credential]
-	helper = store
+	helper = cache --timeout=3600
 [include]
 	path = ~/.gitconfig.local
