@@ -1,7 +1,25 @@
-# ==== フォーマット ====
-# :<emoji>: <subject>
-# <BLANK LINE>
-# <body>
+# ==== format ====
+# type(optional scope): :emoji: <description>
+#
+# [optional body]
+#
+# [optional footer(s)]
+#
+#
+# ==== type ====
+# fix: バグやタイポなどの修正
+# feat: 新しい機能の追加
+# refactor: リファクタリング
+# style: スタイリングに関わる変更(css/sass)
+# chore: 細務(ファイル整備、移動、削除、名前変更など)
+# test: テストファイルに対する変更や修正
+# docs: ドキュメントの加筆や修正
+# breaking: 破壊的変更
+# build: ビルド周りの設定(主にgulpやwebpack周り)
+# ci: CIに関わる設定
+# pref: パフォーマンスの改善
+# revert: 削除や変更の取り消し
+# other: その他
 #
 # ==== emoji ====
 # -- コードに関するもの --
@@ -44,15 +62,16 @@
 # -- その他 --
 # 📄 :page_facing_up:             ライセンスの変更
 #
-# ==== その他絵文字参考 ====
-# https://github.com/dannyfritz/commit-message-emoji
-# https://gist.github.com/parmentf/035de27d6ed1dce0b36a
-# https://gitmoji.carloscuesta.me/
-# gitにおけるコミットログ/メッセージ例文集
-# https://anond.hatelabo.jp/20160725092419 (https://gist.github.com/mono0926/e6ffd032c384ee4c1cef5a2aa4f778d7)
 #
 # ==== ルール ====
 # - タイトルは簡潔に
 # - タイトルの時制は現在で体言止めで終わる。最後に句点(。)は不要
 # - 本文の1行が長くなる場合は適宜改行いれる
 # - 本文にはなぜどうしたか、前と比較してどうなったか
+#
+# ==== 参考 ====
+# https://github.com/dannyfritz/commit-message-emoji
+# https://gist.github.com/parmentf/035de27d6ed1dce0b36a
+# https://gitmoji.carloscuesta.me/
+# https://anond.hatelabo.jp/20160725092419 (https://gist.github.com/mono0926/e6ffd032c384ee4c1cef5a2aa4f778d7)
+# [Gitに心躍ったあの日、そして今 - tyankatsu’s blog](https://tyankatsu.hatenablog.com/entry/2018/09/13/232540)
