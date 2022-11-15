@@ -22,9 +22,13 @@
 	# Gitでマージ済みブランチを一括削除する方法 http://changesworlds.com/2016/01/how-to-bulk-delete-the-merged-branch-in-git/
 	de = "!f () { git branch --merged | egrep -v '\\*|develop|master' | xargs git branch -d; };f"
 	remote-prune= !git remote prune origin
+
+	# https://gist.github.com/blackfalcon/8428401#push-your-branch
+	publish = "!git push origin $(git branch-name)"
 [credential]
 	helper = cache --timeout=3600
 [include]
 	path = ~/.gitconfig.local
 [commit]
 	template = ~/dotfiles/gitmessage.txt
+	gpgsign = true
